@@ -26,7 +26,6 @@ class Lpass < Formula
   def install
     system "make PREFIX=#{prefix} install"
     system "make PREFIX=#{prefix} install-doc" if build.with? "docs"
-    bash_completion.install "contrib/tig-completion.bash"
   end
 
   test do
