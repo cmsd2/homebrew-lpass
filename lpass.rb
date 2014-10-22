@@ -5,9 +5,8 @@ class Lpass < Formula
   url 'https://github.com/lastpass/lastpass-cli/archive/v0.3.0.tar.gz'
   sha1 'a4491bc5d258899ead6c64d4f97d23af93e03ff9'
 
-  depends_on 'openssl'
+  # ssl and xml2 provided by osx
   depends_on 'curl'
-  depends_on 'libxml2'
   depends_on 'pinentry' => :optional
 
   depends_on 'xclip' => :optional
@@ -25,8 +24,8 @@ class Lpass < Formula
   end
 
   def install
-    system "make install"
-    system "make install-doc" if build.with? "docs"
+    system "make PREFIX=#{prefix} install"
+    system "make PREFIX=#{prefix} install-doc" if build.with? "docs"
     bash_completion.install "contrib/tig-completion.bash"
   end
 
