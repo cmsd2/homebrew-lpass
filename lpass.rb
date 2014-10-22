@@ -1,6 +1,6 @@
 require 'formula'
 
-class Less < Formula
+class Lpass < Formula
   homepage 'https://github.com/lastpass/lastpass-cli'
   url 'https://github.com/lastpass/lastpass-cli/archive/v0.3.0.tar.gz'
   sha1 'a4491bc5d258899ead6c64d4f97d23af93e03ff9'
